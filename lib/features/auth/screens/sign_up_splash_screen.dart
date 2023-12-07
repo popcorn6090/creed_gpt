@@ -102,7 +102,6 @@ class _SignUpSplashScreenState extends ConsumerState<SignUpSplashScreen> {
                                 ),
                               ),
                             ),
-                            // CustomButton(onPressed: () {}, child: Text())
                           ],
                         )
                       ]),

@@ -158,7 +158,6 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                                 borderRadius: BorderRadius.circular(10)),
                             minimumSize: const Size(300, 50),
                             backgroundColor: Colors.white,
-                            // foregroundColor: Colors.white,
                           ),
                         ),
                 ],
