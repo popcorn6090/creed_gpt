@@ -21,23 +21,14 @@ class _TypeWriterState extends ConsumerState<TypeWriter>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<int> _textAnimation;
-  bool isAnimationCompleted = false;
 
   @override
   void initState() {
     super.initState();
     animationController =
         AnimationController(vsync: this, duration: widget.speed);
-    _textAnimation =
-        IntTween(begin: 0, end: widget.text.length).animate(animationController)
-          ..addStatusListener((status) {
-            // if (status == AnimationStatus.completed) {
-            //   setState(() {
-            //     isAnimationCompleted = true;
-            //     //animationController.stop();
-            //   });
-            // }
-          });
+    _textAnimation = IntTween(begin: 0, end: widget.text.length)
+        .animate(animationController);
     animationController.forward();
   }
 

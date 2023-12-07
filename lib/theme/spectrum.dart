@@ -15,24 +15,15 @@ class Spectrum {
   static const mablackchatgptColor = Color.fromRGBO(64, 65, 79, 1);
   static const answergpt = Color.fromRGBO(172, 172, 190, 0.25);
 
-  //rgb(142 142 160);
-  //rgb(86 88 105);
-  //rgb(172 172 190);
-
-  //Dark Mode
+//DarkMode
   static var darkMode = ThemeData.dark();
 
   //Light Mode
   static var lightMode = ThemeData.light().copyWith(
       primaryColor: const Color.fromRGBO(64, 65, 79, 1),
       scaffoldBackgroundColor: const Color.fromRGBO(64, 65, 79, 1),
-      //typography: Typography.material2014(white: TextTheme()),
       textTheme: const TextTheme(
         bodyLarge: TextStyle(color: Spectrum.whiteColor),
         bodyMedium: TextStyle(color: Spectrum.whiteColor),
-      )
-      // appBarTheme: AppBarTheme(
-      //   backgroundColor: Color.fromARGB(90, 7, 88, 8),
-      // ),
-      );
+      ));
 }

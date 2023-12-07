@@ -49,7 +49,6 @@ class AuthRepistory {
           name: user.user!.displayName ?? '',
           profilePic: user.user!.photoURL ?? '',
           uid: user.user!.uid,
-          isAuthenticated: true,
           limit: 0,
         );
 
@@ -79,20 +78,6 @@ class AuthRepistory {
       );
       UserModel userModel;
       userModel = await getUserData().first;
-      // if (user.additionalUserInfo!.isNewUser) {
-      //   userModel = UserModel(
-      //     name: user.user!.displayName ?? '',
-      //     profilePic: user.user!.photoURL ?? '',
-      //     uid: user.user!.uid,
-      //     isAuthenticated: true,
-      //   );
-
-      //   await firestore.collection('users').doc(auth.currentUser!.uid).set(
-      //         userModel.toMap(),
-      //       );
-      // } else {
-
-      // }
 
       return right(userModel);
     } on FirebaseException catch (e) {
@@ -122,7 +107,6 @@ class AuthRepistory {
           name: userCredential.user!.displayName ?? '',
           profilePic: userCredential.user!.photoURL ?? '',
           uid: userCredential.user!.uid,
-          isAuthenticated: true,
           limit: 0,
         );
 

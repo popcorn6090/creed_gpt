@@ -5,13 +5,11 @@ class UserModel {
   final String name;
   final String profilePic;
   final String uid;
-  final bool isAuthenticated;
   final double limit;
   UserModel({
     required this.name,
     required this.profilePic,
     required this.uid,
-    required this.isAuthenticated,
     required this.limit,
   });
 
@@ -19,14 +17,12 @@ class UserModel {
     String? name,
     String? profilePic,
     String? uid,
-    bool? isAuthenticated,
     double? limit,
   }) {
     return UserModel(
       name: name ?? this.name,
       profilePic: profilePic ?? this.profilePic,
       uid: uid ?? this.uid,
-      isAuthenticated: isAuthenticated ?? this.isAuthenticated,
       limit: limit ?? this.limit,
     );
   }
@@ -36,7 +32,6 @@ class UserModel {
       'name': name,
       'profilePic': profilePic,
       'uid': uid,
-      'isAuthenticated': isAuthenticated,
       'limit': limit,
     };
   }
@@ -46,7 +41,6 @@ class UserModel {
       name: map['name'] as String,
       profilePic: map['profilePic'] as String,
       uid: map['uid'] as String,
-      isAuthenticated: map['isAuthenticated'] as bool,
       limit: map['limit'] as double,
     );
   }
@@ -58,7 +52,7 @@ class UserModel {
 
   @override
   String toString() {
-    return 'UserModel(name: $name, profilePic: $profilePic, uid: $uid, isAuthenticated: $isAuthenticated, limit: $limit)';
+    return 'UserModel(name: $name, profilePic: $profilePic, uid: $uid, limit: $limit)';
   }
 
   @override
@@ -68,16 +62,11 @@ class UserModel {
     return other.name == name &&
         other.profilePic == profilePic &&
         other.uid == uid &&
-        other.isAuthenticated == isAuthenticated &&
         other.limit == limit;
   }
 
   @override
   int get hashCode {
-    return name.hashCode ^
-        profilePic.hashCode ^
-        uid.hashCode ^
-        isAuthenticated.hashCode ^
-        limit.hashCode;
+    return name.hashCode ^ profilePic.hashCode ^ uid.hashCode ^ limit.hashCode;
   }
 }

@@ -8,7 +8,14 @@ class DecoyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Let\'s get started.'),
+        child: Text(
+          'Let\'s get started.',
+          style: TextStyle(
+            fontSize: 45,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

@@ -29,7 +29,13 @@ class _SplashScreenState extends State<SplashScreen> {
           horizontal: 15,
         ),
         child: Center(
-          child: Text('How Can I Help You Today'),
+          child: Text(
+            'How Can I Help You Today',
+            style: TextStyle(
+              fontSize: 45,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
     );
