@@ -3,7 +3,7 @@ import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:flutter/material.dart';
 
 class TestVideo extends StatefulWidget {
-  final String videoUrl;
+  final String? videoUrl;
   const TestVideo({
     Key? key,
     required this.videoUrl,
@@ -16,10 +16,8 @@ class TestVideo extends StatefulWidget {
 class _TestVideoState extends State<TestVideo> {
   late CustomVideoPlayerWebController _customVideoPlayerWebController;
 
-  final CustomVideoPlayerWebSettings _customVideoPlayerWebSettings =
-      CustomVideoPlayerWebSettings(
-    src: videoUrl,
-  );
+  late final CustomVideoPlayerWebSettings _customVideoPlayerWebSettings =
+      CustomVideoPlayerWebSettings(src: widget.videoUrl!);
 
   @override
   void initState() {
@@ -42,6 +40,3 @@ class _TestVideoState extends State<TestVideo> {
     );
   }
 }
-
-final videoUrl =
-    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
