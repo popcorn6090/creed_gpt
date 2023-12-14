@@ -38,14 +38,14 @@ class AuthController extends StateNotifier<bool> {
     return authRepository.getUserData();
   }
 
-  void signUserUp(BuildContext context) async {
-    state = true;
-    final user = await authRepository.signUserUp();
-    state = false;
+  // void signUserUp(BuildContext context) async {
+  //   state = true;
+  //   final user = await authRepository.signUserUp();
+  //   state = false;
 
-    user.fold((l) => showSnackBar(context, l.message),
-        (r) => ref.read(userProvider.notifier).update((state) => r));
-  }
+  //   user.fold((l) => showSnackBar(context, l.message),
+  //       (r) => ref.read(userProvider.notifier).update((state) => r));
+  // }
 
   void signWithEmailAndPassword(
       BuildContext context, String email, String password) async {

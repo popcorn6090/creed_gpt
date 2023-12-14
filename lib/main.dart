@@ -1,5 +1,6 @@
 import 'package:creed_gpt/features/auth/controller/auth_controller.dart';
 import 'package:creed_gpt/features/auth/screens/sign_up_splash_screen.dart';
+import 'package:creed_gpt/features/chat/screens/chat_screen.dart';
 import 'package:creed_gpt/features/splash/screens/splash_screen.dart';
 import 'package:creed_gpt/firebase_options.dart';
 import 'package:creed_gpt/models/user_model.dart';
@@ -34,7 +35,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   Widget navigateToChatScreen() {
     getData();
     if (userModel == null) {
-      return const SignUpSplashScreen();
+      return const ChatScreen();
     }
 
     return const SplashScreen();
@@ -48,8 +49,7 @@ class _MyAppState extends ConsumerState<MyApp> {
         title: 'Creed Gpt',
         theme: Spectrum.lightMode,
         onGenerateRoute: (settings) => systemRoutes(settings),
-        home:
-            data != null ? navigateToChatScreen() : const SignUpSplashScreen(),
+        home: data != null ? navigateToChatScreen() : null,
       );
     }, error: (error, trace) {
       return Center(

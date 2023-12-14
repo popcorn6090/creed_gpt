@@ -24,9 +24,9 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
         );
   }
 
-  void signUpWithGoogle() {
-    ref.read(authControllerProvider.notifier).signUserUp(context);
-  }
+  // void signUpWithGoogle() {
+  //   ref.read(authControllerProvider.notifier).signUserUp(context);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -141,25 +141,25 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  isLoading
-                      ? const CircularProgressIndicator()
-                      : ElevatedButton.icon(
-                          icon: const Icon(Icons.golf_course),
-                          label: const Text(
-                            'Continue With Google',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Spectrum.blackColor,
-                            ),
-                          ),
-                          onPressed: signUpWithGoogle,
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            minimumSize: const Size(300, 50),
-                            backgroundColor: Colors.white,
-                          ),
-                        ),
+                  // isLoading
+                  //     ? const CircularProgressIndicator()
+                  //     : ElevatedButton.icon(
+                  //         icon: const Icon(Icons.golf_course),
+                  //         label: const Text(
+                  //           'Continue With Google',
+                  //           style: TextStyle(
+                  //             fontSize: 16,
+                  //             color: Spectrum.blackColor,
+                  //           ),
+                  //         ),
+                  //         onPressed: signUpWithGoogle,
+                  //         style: ElevatedButton.styleFrom(
+                  //           shape: RoundedRectangleBorder(
+                  //               borderRadius: BorderRadius.circular(10)),
+                  //           minimumSize: const Size(300, 50),
+                  //           backgroundColor: Colors.white,
+                  //         ),
+                  //       ),
                 ],
               ),
             ),

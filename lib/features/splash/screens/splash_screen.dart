@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:creed_gpt/features/chat/screens/chat_screen.dart';
 import 'package:creed_gpt/features/splash/screens/decoy_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacementNamed(DecoyScreen.routeName);
+      Navigator.of(context).pushReplacementNamed(ChatScreen.routeName);
     });
   }
 

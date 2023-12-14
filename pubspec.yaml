@@ -40,7 +40,10 @@ dependencies:
   cloud_firestore: ^4.13.4
   flutter_riverpod: ^2.4.9
   fpdart: ^1.1.0
-  google_sign_in: ^6.1.6
+  http: ^1.1.0
+  audioplayers: ^5.2.1
+  appinio_video_player: ^1.2.2
+  
 
 dev_dependencies:
   flutter_test:

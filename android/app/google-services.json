@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "331188388770",
+    "project_id": "creed-gpt",
+    "storage_bucket": "creed-gpt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331188388770:android:5e5e19edfffd15c35da8fb",
+        "android_client_info": {
+          "package_name": "com.example.creed_gpt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331188388770-duaa35u3gnogiqgn0j5crni3kc5tiodk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVzD4B8QSVrNupqCDYE_X0wMSBwoReeb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331188388770-duaa35u3gnogiqgn0j5crni3kc5tiodk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

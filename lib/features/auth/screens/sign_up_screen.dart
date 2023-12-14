@@ -35,9 +35,9 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
         );
   }
 
-  void signUpWithGoogle() {
-    ref.read(authControllerProvider.notifier).signUserUp(context);
-  }
+  // void signUpWithGoogle() {
+  //   ref.read(authControllerProvider.notifier).signUserUp(context);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +67,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     alignment: Alignment.center,
                     child: TextFormField(
                       controller: _emailController,
+                      style: const TextStyle(color: Spectrum.blackColor),
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: 'Email Address',
@@ -88,6 +89,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     width: 300,
                     alignment: Alignment.center,
                     child: TextFormField(
+                      style: const TextStyle(color: Spectrum.blackColor),
                       controller: _passwordController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
@@ -129,55 +131,55 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                           ),
                   ),
                   const SizedBox(height: 20),
-                  RichText(
-                    text: const TextSpan(
-                      children: [
-                        TextSpan(text: 'Already have an account? '),
-                        TextSpan(
-                            text: 'Sign In',
-                            style: TextStyle(
-                              color: Spectrum.greenColor,
-                            )),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  RichText(
-                    text: const TextSpan(
-                      children: [
-                        TextSpan(text: '----------------  '),
-                        TextSpan(
-                          text: 'OR',
-                          style: TextStyle(),
-                        ),
-                        TextSpan(
-                          text: ' ------------------',
-                          style: TextStyle(),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  isLoading
-                      ? const CircularProgressIndicator()
-                      : ElevatedButton.icon(
-                          icon: const Icon(Icons.golf_course),
-                          label: const Text(
-                            'Continue With Google',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Spectrum.blackColor,
-                            ),
-                          ),
-                          onPressed: signUpWithGoogle,
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            minimumSize: const Size(300, 50),
-                            backgroundColor: Colors.white,
-                            // foregroundColor: Colors.white,
-                          ),
-                        ),
+                  // RichText(
+                  //   text: const TextSpan(
+                  //     children: [
+                  //       TextSpan(text: 'Already have an account? '),
+                  //       TextSpan(
+                  //           text: 'Sign In',
+                  //           style: TextStyle(
+                  //             color: Spectrum.greenColor,
+                  //           )),
+                  //     ],
+                  //   ),
+                  // ),
+                  // const SizedBox(height: 10),
+                  // RichText(
+                  //   text: const TextSpan(
+                  //     children: [
+                  //       TextSpan(text: '----------------  '),
+                  //       TextSpan(
+                  //         text: 'OR',
+                  //         style: TextStyle(),
+                  //       ),
+                  //       TextSpan(
+                  //         text: ' ------------------',
+                  //         style: TextStyle(),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  // const SizedBox(height: 10),
+                  // isLoading
+                  //     ? const CircularProgressIndicator()
+                  //     : ElevatedButton.icon(
+                  //         icon: const Icon(Icons.golf_course),
+                  //         label: const Text(
+                  //           'Continue With Google',
+                  //           style: TextStyle(
+                  //             fontSize: 16,
+                  //             color: Spectrum.blackColor,
+                  //           ),
+                  //         ),
+                  //         onPressed: signUpWithGoogle,
+                  //         style: ElevatedButton.styleFrom(
+                  //           shape: RoundedRectangleBorder(
+                  //               borderRadius: BorderRadius.circular(10)),
+                  //           minimumSize: const Size(300, 50),
+                  //           backgroundColor: Colors.white,
+                  //           // foregroundColor: Colors.white,
+                  //         ),
+                  //       ),
                 ],
               ),
             ),

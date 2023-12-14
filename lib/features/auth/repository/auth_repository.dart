@@ -5,26 +5,24 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../../core/typedef.dart';
 import '../../../models/user_model.dart';
 
 final authRepositoryProvider = Provider((ref) {
   return AuthRepistory(
-      auth: FirebaseAuth.instance,
-      firestore: FirebaseFirestore.instance,
-      googleSignIn: GoogleSignIn());
+    auth: FirebaseAuth.instance,
+    firestore: FirebaseFirestore.instance,
+  );
 });
 
 class AuthRepistory {
   final FirebaseAuth auth;
   final FirebaseFirestore firestore;
-  final GoogleSignIn googleSignIn;
+
   AuthRepistory({
     required this.auth,
     required this.firestore,
-    required this.googleSignIn,
   });
 
   Stream<User?> get authStateChanged => auth.authStateChanges();
@@ -89,42 +87,42 @@ class AuthRepistory {
     }
   }
 
-  FutureEither<UserModel> signUserUp() async {
-    try {
-      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
-      final credential = GoogleAuthProvider.credential(
-        accessToken: (await googleUser?.authentication)?.accessToken,
-        idToken: (await googleUser?.authentication)?.idToken,
-      );
+  // FutureEither<UserModel> signUserUp() async {
+  //   try {
+  //     final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+  //     final credential = GoogleAuthProvider.credential(
+  //       accessToken: (await googleUser?.authentication)?.accessToken,
+  //       idToken: (await googleUser?.authentication)?.idToken,
+  //     );
 
-      UserCredential userCredential =
-          await auth.signInWithCredential(credential);
+  //     UserCredential userCredential =
+  //         await auth.signInWithCredential(credential);
 
-      UserModel userModel;
+  //     UserModel userModel;
 
-      if (userCredential.additionalUserInfo!.isNewUser) {
-        userModel = UserModel(
-          name: userCredential.user!.displayName ?? '',
-          profilePic: userCredential.user!.photoURL ?? '',
-          uid: userCredential.user!.uid,
-          limit: 0,
-        );
+  //     if (userCredential.additionalUserInfo!.isNewUser) {
+  //       userModel = UserModel(
+  //         name: userCredential.user!.displayName ?? '',
+  //         profilePic: userCredential.user!.photoURL ?? '',
+  //         uid: userCredential.user!.uid,
+  //         limit: 0,
+  //       );
 
-        await firestore
-            .collection('users')
-            .doc(userCredential.user!.uid)
-            .set(userModel.toMap());
-      } else {
-        userModel = await getUserData().first;
-      }
-      return right(userModel);
-    } on FirebaseException catch (e) {
-      throw e.message!;
-    } catch (e) {
-      debugPrint(e.toString());
-      return left(Failure(message: e.toString()));
-    }
-  }
+  //       await firestore
+  //           .collection('users')
+  //           .doc(userCredential.user!.uid)
+  //           .set(userModel.toMap());
+  //     } else {
+  //       userModel = await getUserData().first;
+  //     }
+  //     return right(userModel);
+  //   } on FirebaseException catch (e) {
+  //     throw e.message!;
+  //   } catch (e) {
+  //     debugPrint(e.toString());
+  //     return left(Failure(message: e.toString()));
+  //   }
+  // }
 
   FutureVoid googleSignOut() async {
     try {
