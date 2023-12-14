@@ -3,8 +3,6 @@ const router = express.Router();
 const Search = require('../models/search');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://ediyiechrispopcorn:pZI379MS5Erxgv5s@cluster0.jkjlou1.mongodb.net/?retryWrites=true&w=majority');
-
 
 router.post('/', (req, res, next) => {
   const search = new Search({
